@@ -18,7 +18,40 @@
 		F63F52B51E48BBBE006DAF83 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
 		F63F52B81E48BC8E006DAF83 /* ApplicationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */; };
 		F63F52BB1E48C3A5006DAF83 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F63F52C51E48C83E006DAF83 /* DocumentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */; };
+		F63F52CC1E48C83E006DAF83 /* documents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F63F52C01E48C83E006DAF83 /* documents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F63F52D11E48C8D3006DAF83 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F63F52D21E48C8D3006DAF83 /* CloudAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AA1E48BBBE006DAF83 /* CloudAPI.framework */; };
+		F63F52D31E48C8D3006DAF83 /* CloudStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AB1E48BBBE006DAF83 /* CloudStore.framework */; };
+		F63F52D41E48C8D3006DAF83 /* CloudUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */; };
+		F63F52D51E48C8D3006DAF83 /* Fountain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AD1E48BBBE006DAF83 /* Fountain.framework */; };
+		F63F52D61E48C8D3006DAF83 /* PureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AE1E48BBBE006DAF83 /* PureXML.framework */; };
+		F63F52D71E48C8D3006DAF83 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F63F52CA1E48C83E006DAF83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F63F528A1E48B849006DAF83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F63F52BF1E48C83E006DAF83;
+			remoteInfo = documents;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F63F52D01E48C83E006DAF83 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F63F52CC1E48C83E006DAF83 /* documents.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		F63F52921E48B849006DAF83 /* nube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nube.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,6 +68,10 @@
 		F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModule.swift; sourceTree = "<group>"; };
 		F63F52B91E48BDAE006DAF83 /* nube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nube.entitlements; sourceTree = "<group>"; };
 		F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyChain.framework; path = ../Carthage/Build/iOS/KeyChain.framework; sourceTree = "<group>"; };
+		F63F52C01E48C83E006DAF83 /* documents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = documents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F63F52C31E48C83E006DAF83 /* documents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = documents.entitlements; sourceTree = "<group>"; };
+		F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerViewController.swift; sourceTree = "<group>"; };
+		F63F52C91E48C83E006DAF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +89,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F63F52BD1E48C83E006DAF83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F63F52D11E48C8D3006DAF83 /* KeyChain.framework in Frameworks */,
+				F63F52D21E48C8D3006DAF83 /* CloudAPI.framework in Frameworks */,
+				F63F52D31E48C8D3006DAF83 /* CloudStore.framework in Frameworks */,
+				F63F52D41E48C8D3006DAF83 /* CloudUI.framework in Frameworks */,
+				F63F52D51E48C8D3006DAF83 /* Fountain.framework in Frameworks */,
+				F63F52D61E48C8D3006DAF83 /* PureXML.framework in Frameworks */,
+				F63F52D71E48C8D3006DAF83 /* SQLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F63F52941E48B849006DAF83 /* nube */,
+				F63F52C11E48C83E006DAF83 /* documents */,
 				F63F52931E48B849006DAF83 /* Products */,
 				F63F52A91E48BBBE006DAF83 /* Frameworks */,
 			);
@@ -68,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				F63F52921E48B849006DAF83 /* nube.app */,
+				F63F52C01E48C83E006DAF83 /* documents.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,6 +168,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F63F52C11E48C83E006DAF83 /* documents */ = {
+			isa = PBXGroup;
+			children = (
+				F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */,
+				F63F52C21E48C83E006DAF83 /* Supporting Files */,
+			);
+			path = documents;
+			sourceTree = "<group>";
+		};
+		F63F52C21E48C83E006DAF83 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F63F52C91E48C83E006DAF83 /* Info.plist */,
+				F63F52C31E48C83E006DAF83 /* documents.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,15 +197,34 @@
 				F63F528F1E48B849006DAF83 /* Frameworks */,
 				F63F52901E48B849006DAF83 /* Resources */,
 				F63F52B61E48BBC3006DAF83 /* Carthage */,
+				F63F52D01E48C83E006DAF83 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F63F52CB1E48C83E006DAF83 /* PBXTargetDependency */,
 			);
 			name = nube;
 			productName = nube;
 			productReference = F63F52921E48B849006DAF83 /* nube.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F63F52BF1E48C83E006DAF83 /* documents */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F63F52CD1E48C83E006DAF83 /* Build configuration list for PBXNativeTarget "documents" */;
+			buildPhases = (
+				F63F52BC1E48C83E006DAF83 /* Sources */,
+				F63F52BD1E48C83E006DAF83 /* Frameworks */,
+				F63F52BE1E48C83E006DAF83 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = documents;
+			productName = documents;
+			productReference = F63F52C01E48C83E006DAF83 /* documents.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -159,6 +249,11 @@
 							};
 						};
 					};
+					F63F52BF1E48C83E006DAF83 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EJW69VRSSH;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = F63F528D1E48B849006DAF83 /* Build configuration list for PBXProject "nube" */;
@@ -175,6 +270,7 @@
 			projectRoot = "";
 			targets = (
 				F63F52911E48B849006DAF83 /* nube */,
+				F63F52BF1E48C83E006DAF83 /* documents */,
 			);
 		};
 /* End PBXProject section */
@@ -186,6 +282,13 @@
 			files = (
 				F63F52A01E48B849006DAF83 /* LaunchScreen.storyboard in Resources */,
 				F63F529D1E48B849006DAF83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F63F52BE1E48C83E006DAF83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +328,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F63F52BC1E48C83E006DAF83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F63F52C51E48C83E006DAF83 /* DocumentPickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F63F52CB1E48C83E006DAF83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F63F52BF1E48C83E006DAF83 /* documents */;
+			targetProxy = F63F52CA1E48C83E006DAF83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F63F529E1E48B849006DAF83 /* LaunchScreen.storyboard */ = {
@@ -335,6 +454,7 @@
 		F63F52A51E48B849006DAF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = nube/nube.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
@@ -350,6 +470,7 @@
 		F63F52A61E48B849006DAF83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = nube/nube.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
@@ -358,6 +479,38 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.nube;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F63F52CE1E48C83E006DAF83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = documents/documents.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
+				INFOPLIST_FILE = documents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.nube.documents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F63F52CF1E48C83E006DAF83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = documents/documents.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
+				INFOPLIST_FILE = documents/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.nube.documents;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -379,6 +532,14 @@
 			buildConfigurations = (
 				F63F52A51E48B849006DAF83 /* Debug */,
 				F63F52A61E48B849006DAF83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F63F52CD1E48C83E006DAF83 /* Build configuration list for PBXNativeTarget "documents" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F63F52CE1E48C83E006DAF83 /* Debug */,
+				F63F52CF1E48C83E006DAF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
