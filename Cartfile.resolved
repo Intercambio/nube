@@ -1,0 +1,7 @@
+github "anagromataf/Fountain" "2.5.4"
+github "Intercambio/KeyChain" "1.1.1"
+github "Intercambio/PureXML" "1.2.1"
+github "stephencelis/SQLite.swift" "0.11.2"
+github "Intercambio/CloudAPI" "0.1"
+github "Intercambio/CloudStore" "0.1"
+github "Intercambio/CloudUI" "f888e297aeeeb050ab82d98904e90993b4a05b98"
