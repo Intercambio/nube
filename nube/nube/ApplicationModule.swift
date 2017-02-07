@@ -13,7 +13,7 @@ import CloudStore
 public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     public let window: UIWindow
-    public let service: Service
+    public let cloudService: CloudService
     
     let accountListModule: AccountListModule
     let resourceListModule: ResourceListModule
@@ -22,12 +22,12 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     let mainModule: MainModule
     
-    public init(window: UIWindow, service: Service) {
+    public init(window: UIWindow, cloudService: CloudService) {
         self.window = window
-        self.service = service
+        self.cloudService = cloudService
         
-        accountListModule = AccountListModule(accountManager: service.accountManager)
-        resourceListModule = ResourceListModule(service: service)
+        accountListModule = AccountListModule(cloudService: cloudService)
+        resourceListModule = ResourceListModule(cloudService: cloudService)
         resourceModule = ResourceModule()
         resourceBrowserModule = ResourceBrowserModule()
         mainModule = MainModule()
@@ -50,22 +50,18 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     // MARK: AccountListRouter, ResourceListRouter
     
-    public func present(resourceAt path: [String], of account: Account) {
+    public func present(resourceAt path: [String], of account: CloudService.Account) {
         do {
-            let resourceManager = service.resourceManager(for: account)
-            
             guard
-                let resource = try resourceManager.resource(at: path)
+                let resource = try cloudService.resource(of: account, at: path)
                 else { return }
-            
             self.present(resource)
-
         } catch {
             NSLog("Failed to get resource manager: \(error)")
         }
     }
     
-    public func present(_ resource: Resource) {
+    public func present(_ resource: CloudService.Resource) {
         guard
             let resourcePresenter = window.rootViewController as? ResourcePresenter
             else { return }
@@ -104,7 +100,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
                     return
             }
             
-            let _ = try! self.service.accountManager.addAccount(with: url, username: username)
+            let _ = try! self.cloudService.addAccount(with: url, username: username)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) {

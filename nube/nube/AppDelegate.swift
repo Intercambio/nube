@@ -12,22 +12,26 @@ import CloudStore
 import KeyChain
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, ServiceDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
 
     var window: UIWindow?
     var applicationModule: ApplicationModule?
-    var service: Service?
+    var cloudService: CloudService?
     var keyChain: KeyChain?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        guard
+            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.nube")
+            else { return false }
+        
+        let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
+        try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
+        
         self.keyChain = KeyChain(serviceName: "im.intercambio.nube")
         
-        let fileManager = FileManager.default
-        let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.nube")!
-        service = Service(directory: directory)
-        service?.delegate = self
-        service?.start { (error) in
+        cloudService = CloudService(directory: resourcesDirectory)
+        cloudService?.delegate = self
+        cloudService?.start { (error) in
             DispatchQueue.main.async {
                 if error != nil {
                     NSLog("Failed to setup service: \(error)")
@@ -35,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ServiceDelegate {
                     let screen = UIScreen.main
                     self.window = UIWindow(frame: screen.bounds)
                     self.window?.screen = screen
-                    self.applicationModule = ApplicationModule(window: self.window!, service: self.service!)
+                    self.applicationModule = ApplicationModule(window: self.window!, cloudService: self.cloudService!)
                     self.applicationModule?.present()
                 }
             }
@@ -51,10 +55,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ServiceDelegate {
     
     // MARK: ServiceDelegate
     
-    func service(_ service: Service, needsPasswordFor account: Account, completionHandler: @escaping (String?) -> Void) {
+    func service(_ service: CloudService, needsPasswordFor account: CloudService.Account, completionHandler: @escaping (String?) -> Void) {
+        
         guard
             let keyChain = self.keyChain,
-            let passwordPromt = window?.rootViewController as? PasswordPromt,
+            let prompt = window?.rootViewController as? PasswordPrompt,
             var accountURL = URLComponents(url: account.url, resolvingAgainstBaseURL: true)
             else {
                 completionHandler(nil)
@@ -81,7 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, ServiceDelegate {
             let password = try keyChain.passwordForItem(with: identifier)
             completionHandler(password)
         } catch {
-            passwordPromt.requestPassword(for: account) { password in
+            prompt.requestPassword(for: account) { password in
                 do {
                     try keyChain.setPassword(password, forItemWith: identifier)
                     completionHandler(password)

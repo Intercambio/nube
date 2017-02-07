@@ -11,9 +11,9 @@ import CloudUI
 import CloudStore
 import KeyChain
 
-class DocumentPickerViewController: UIDocumentPickerExtensionViewController, AccountListRouter, ResourceListRouter, ServiceDelegate {
+class DocumentPickerViewController: UIDocumentPickerExtensionViewController, AccountListRouter, ResourceListRouter, CloudServiceDelegate {
     
-    let service: Service
+    let cloudService: CloudService
     var keyChain: KeyChain
     
     var accountListModule: AccountListModule!
@@ -21,24 +21,28 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     var resourceModule: ResourceModule!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        
+
         keyChain = KeyChain(serviceName: "im.intercambio.nube")
         
         let fileManager = FileManager.default
         let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.nube")!
-        service = Service(directory: directory)
+        
+        let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
+        try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
+        
+        cloudService = CloudService(directory: resourcesDirectory)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
-        service.delegate = self
-        service.start { [weak self] (error) in
+        cloudService.delegate = self
+        cloudService.start { [weak self] (error) in
             DispatchQueue.main.async {
                 guard let this = self else { return }
                 if error != nil {
                     NSLog("Failed to setup service: \(error)")
                 } else {
-                    this.accountListModule = AccountListModule(accountManager: this.service.accountManager)
-                    this.resourceListModule = ResourceListModule(service: this.service)
+                    this.accountListModule = AccountListModule(cloudService: this.cloudService)
+                    this.resourceListModule = ResourceListModule(cloudService: this.cloudService)
                     this.resourceModule = ResourceModule()
                     
                     this.accountListModule.router = this
@@ -76,22 +80,18 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     // MARK: AccountListRouter, ResourceListRouter
     
     
-    public func present(resourceAt path: [String], of account: Account) {
+    public func present(resourceAt path: [String], of account: CloudService.Account) {
         do {
-            let resourceManager = service.resourceManager(for: account)
-            
             guard
-                let resource = try resourceManager.resource(at: path)
+                let resource = try cloudService.resource(of: account, at: path)
                 else { return }
-            
             self.present(resource)
-            
         } catch {
             NSLog("Failed to get resource manager: \(error)")
         }
     }
     
-    func present(_ resource: Resource) {
+    func present(_ resource: CloudService.Resource) {
         present(resource, animated: true)
     }
     
@@ -99,7 +99,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     
     // MARK: ServiceDelegate
     
-    func service(_ service: Service, needsPasswordFor account: Account, completionHandler: @escaping (String?) -> Void) {
+    func service(_ service: CloudService, needsPasswordFor account: CloudService.Account, completionHandler: @escaping (String?) -> Void) {
         guard
             var accountURL = URLComponents(url: account.url, resolvingAgainstBaseURL: true)
             else {
@@ -127,7 +127,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
 
 extension DocumentPickerViewController: ResourcePresenter {
     
-    public var resource: Resource? {
+    public var resource: CloudService.Resource? {
         guard
             let navigationController = self.navigationController,
             let resourcePresenter = navigationController.topViewController as? ResourcePresenter
@@ -137,7 +137,7 @@ extension DocumentPickerViewController: ResourcePresenter {
         return resourcePresenter.resource
     }
     
-    public func present(_ resource: Resource, animated: Bool) {
+    public func present(_ resource: CloudService.Resource, animated: Bool) {
         guard
             let navigationController = self.navigationController,
             let viewController = makeViewController(for: resource)
@@ -147,7 +147,7 @@ extension DocumentPickerViewController: ResourcePresenter {
         navigationController.pushViewController(viewController, animated: animated)
     }
     
-    private func makeViewController(for resource: Resource) -> UIViewController? {
+    private func makeViewController(for resource: CloudService.Resource) -> UIViewController? {
         var viewController: UIViewController? = nil
         if resource.isCollection == true {
             viewController = resourceListModule.makeViewController()
