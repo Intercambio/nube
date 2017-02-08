@@ -59,7 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         
         guard
             let keyChain = self.keyChain,
-            let prompt = window?.rootViewController as? PasswordPrompt,
+            let prompt = window?.rootViewController as? PasswordUserInterface,
             var accountURL = URLComponents(url: account.url, resolvingAgainstBaseURL: true)
             else {
                 completionHandler(nil)

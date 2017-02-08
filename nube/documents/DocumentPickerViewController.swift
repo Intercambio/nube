@@ -91,6 +91,10 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
         }
     }
     
+    public func presentSettings(for account: CloudService.Account) {
+        
+    }
+    
     func present(_ resource: CloudService.Resource) {
         present(resource, animated: true)
     }
@@ -125,12 +129,12 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     }
 }
 
-extension DocumentPickerViewController: ResourcePresenter {
+extension DocumentPickerViewController: ResourceUserInterface {
     
     public var resource: CloudService.Resource? {
         guard
             let navigationController = self.navigationController,
-            let resourcePresenter = navigationController.topViewController as? ResourcePresenter
+            let resourcePresenter = navigationController.topViewController as? ResourceUserInterface
             else {
                 return nil
         }
@@ -154,7 +158,7 @@ extension DocumentPickerViewController: ResourcePresenter {
         } else {
             viewController = resourceModule.makeViewController()
         }
-        if let resourcePresenter = viewController as? ResourcePresenter {
+        if let resourcePresenter = viewController as? ResourceUserInterface {
             resourcePresenter.present(resource, animated: false)
         }
         return viewController

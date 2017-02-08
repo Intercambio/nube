@@ -19,6 +19,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     let resourceListModule: ResourceListModule
     let resourceModule: ResourceModule
     let resourceBrowserModule: ResourceBrowserModule
+    let settingsModule: SettingsModule
     
     let mainModule: MainModule
     
@@ -30,6 +31,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         resourceListModule = ResourceListModule(cloudService: cloudService)
         resourceModule = ResourceModule()
         resourceBrowserModule = ResourceBrowserModule()
+        settingsModule = SettingsModule(cloudService: cloudService)
         mainModule = MainModule()
         
         resourceBrowserModule.accountListModule = accountListModule
@@ -37,6 +39,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         resourceBrowserModule.resourceModule = resourceModule
         mainModule.resourceBrowserModule = resourceBrowserModule
         mainModule.resourceModule = resourceModule
+        mainModule.settingsModule = settingsModule
         
         accountListModule.router = self
         resourceListModule.router = self
@@ -63,9 +66,16 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     public func present(_ resource: CloudService.Resource) {
         guard
-            let resourcePresenter = window.rootViewController as? ResourcePresenter
+            let resourceUserInterface = window.rootViewController as? ResourceUserInterface
             else { return }
-        resourcePresenter.present(resource, animated: true)
+        resourceUserInterface.present(resource, animated: true)
+    }
+    
+    public func presentSettings(for account: CloudService.Account) {
+        guard
+            let settingsUserInterface = window.rootViewController as? SettingsUserInterface
+            else { return }
+        settingsUserInterface.presentSettings(for: account, animated: true)
     }
     
     public func presentNewAccount() {
