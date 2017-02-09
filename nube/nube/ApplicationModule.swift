@@ -32,7 +32,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         resourceModule = ResourceModule()
         resourceBrowserModule = ResourceBrowserModule()
         settingsModule = SettingsModule(cloudService: cloudService)
-        mainModule = MainModule()
+        mainModule = MainModule(cloudService: cloudService)
         
         resourceBrowserModule.accountListModule = accountListModule
         resourceBrowserModule.resourceListModule = resourceListModule
