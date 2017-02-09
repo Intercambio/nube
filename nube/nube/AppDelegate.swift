@@ -17,7 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
     var window: UIWindow?
     var applicationModule: ApplicationModule?
     var cloudService: CloudService?
-    var keyChain: KeyChain?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         guard
@@ -27,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
         
-        self.keyChain = KeyChain(serviceName: "im.intercambio.nube")
+        let keyChain = KeyChain(serviceName: "im.intercambio.nube")
         
-        cloudService = CloudService(directory: resourcesDirectory)
+        cloudService = CloudService(directory: resourcesDirectory, keyChain: keyChain)
         cloudService?.delegate = self
         cloudService?.start { (error) in
             DispatchQueue.main.async {
@@ -55,46 +54,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
     
     // MARK: ServiceDelegate
     
-    func service(_ service: CloudService, needsPasswordFor account: CloudService.Account, completionHandler: @escaping (String?) -> Void) {
-        
+    func service(_ service: CloudService,
+                 needsPasswordFor account: CloudService.Account,
+                 completionHandler: @escaping (String?) -> Void) {
         guard
-            let keyChain = self.keyChain,
-            let prompt = window?.rootViewController as? PasswordUserInterface,
-            var accountURL = URLComponents(url: account.url, resolvingAgainstBaseURL: true)
+            let prompt = window?.rootViewController as? PasswordUserInterface
             else {
                 completionHandler(nil)
                 return
         }
         
-        accountURL.user = account.username
-        
-        guard
-            let identifier = accountURL.url?.absoluteString
-            else {
-                completionHandler(nil)
-                return
-        }
-        
-        do {
-            let item = KeyChainItem(identifier: identifier, invisible: false, options: [:])
-            try keyChain.add(item)
-        } catch {
-            
-        }
-        
-        do {
-            let password = try keyChain.passwordForItem(with: identifier)
-            completionHandler(password)
-        } catch {
-            prompt.requestPassword(for: account) { password in
-                do {
-                    try keyChain.setPassword(password, forItemWith: identifier)
-                    completionHandler(password)
-                } catch {
-                    completionHandler(password)
-                }
-            }
-        }
+        prompt.requestPassword(for: account, completion: completionHandler)
     }
     
 }

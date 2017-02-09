@@ -14,7 +14,6 @@ import KeyChain
 class DocumentPickerViewController: UIDocumentPickerExtensionViewController, AccountListRouter, ResourceListRouter, CloudServiceDelegate {
     
     let cloudService: CloudService
-    var keyChain: KeyChain
     
     var accountListModule: AccountListModule!
     var resourceListModule: ResourceListModule!
@@ -22,7 +21,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
-        keyChain = KeyChain(serviceName: "im.intercambio.nube")
+        let keyChain = KeyChain(serviceName: "im.intercambio.nube")
         
         let fileManager = FileManager.default
         let directory = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.nube")!
@@ -30,7 +29,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
         
-        cloudService = CloudService(directory: resourcesDirectory)
+        cloudService = CloudService(directory: resourcesDirectory, keyChain: keyChain)
         
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
@@ -103,29 +102,9 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     
     // MARK: ServiceDelegate
     
-    func service(_ service: CloudService, needsPasswordFor account: CloudService.Account, completionHandler: @escaping (String?) -> Void) {
-        guard
-            var accountURL = URLComponents(url: account.url, resolvingAgainstBaseURL: true)
-            else {
-                completionHandler(nil)
-                return
-        }
-        
-        accountURL.user = account.username
-        
-        guard
-            let identifier = accountURL.url?.absoluteString
-            else {
-                completionHandler(nil)
-                return
-        }
-        
-        do {
-            let password = try keyChain.passwordForItem(with: identifier)
-            completionHandler(password)
-        } catch {
-            NSLog("/(error)")
-        }
+    func service(_ service: CloudService,
+                 needsPasswordFor account: CloudService.Account,
+                 completionHandler: @escaping (String?) -> Void) {
     }
 }
 
