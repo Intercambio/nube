@@ -67,5 +67,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         prompt.requestPassword(for: account, completion: completionHandler)
     }
     
+    func serviceDidBeginActivity(_ service: CloudService) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func serviceDidEndActivity(_ service: CloudService) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
 }
-

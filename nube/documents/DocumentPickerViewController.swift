@@ -106,6 +106,15 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
                  needsPasswordFor account: CloudService.Account,
                  completionHandler: @escaping (String?) -> Void) {
     }
+    
+    
+    func serviceDidBeginActivity(_ service: CloudService) {
+        
+    }
+    
+    func serviceDidEndActivity(_ service: CloudService) {
+        
+    }
 }
 
 extension DocumentPickerViewController: ResourceUserInterface {
