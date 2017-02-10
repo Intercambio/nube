@@ -16,4 +16,10 @@
    <FileRef
       location = "group:nube/nube.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/CloudUI/CloudUI/CloudUI.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Carthage/Checkouts/CloudStore/CloudStore/CloudStore.xcodeproj">
+   </FileRef>
 </Workspace>
