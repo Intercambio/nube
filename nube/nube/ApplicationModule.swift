@@ -8,7 +8,7 @@
 
 import UIKit
 import CloudUI
-import CloudStore
+import CloudService
 
 public class ApplicationModule: AccountListRouter, ResourceListRouter {
     

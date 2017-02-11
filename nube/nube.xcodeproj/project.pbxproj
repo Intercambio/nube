@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F608C41A1E4F2F2C00410948 /* CloudService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608C4191E4F2F2C00410948 /* CloudService.framework */; };
+		F608C41B1E4F2F3B00410948 /* CloudService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608C4191E4F2F2C00410948 /* CloudService.framework */; };
 		F63F52961E48B849006DAF83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52951E48B849006DAF83 /* AppDelegate.swift */; };
 		F63F529D1E48B849006DAF83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F63F529C1E48B849006DAF83 /* Assets.xcassets */; };
 		F63F52A01E48B849006DAF83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F63F529E1E48B849006DAF83 /* LaunchScreen.storyboard */; };
-		F63F52B01E48BBBE006DAF83 /* CloudAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AA1E48BBBE006DAF83 /* CloudAPI.framework */; };
-		F63F52B11E48BBBE006DAF83 /* CloudStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AB1E48BBBE006DAF83 /* CloudStore.framework */; };
 		F63F52B21E48BBBE006DAF83 /* CloudUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */; };
 		F63F52B31E48BBBE006DAF83 /* Fountain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AD1E48BBBE006DAF83 /* Fountain.framework */; };
 		F63F52B41E48BBBE006DAF83 /* PureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AE1E48BBBE006DAF83 /* PureXML.framework */; };
@@ -21,8 +21,6 @@
 		F63F52C51E48C83E006DAF83 /* DocumentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */; };
 		F63F52CC1E48C83E006DAF83 /* documents.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F63F52C01E48C83E006DAF83 /* documents.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F63F52D11E48C8D3006DAF83 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
-		F63F52D21E48C8D3006DAF83 /* CloudAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AA1E48BBBE006DAF83 /* CloudAPI.framework */; };
-		F63F52D31E48C8D3006DAF83 /* CloudStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AB1E48BBBE006DAF83 /* CloudStore.framework */; };
 		F63F52D41E48C8D3006DAF83 /* CloudUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */; };
 		F63F52D51E48C8D3006DAF83 /* Fountain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AD1E48BBBE006DAF83 /* Fountain.framework */; };
 		F63F52D61E48C8D3006DAF83 /* PureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AE1E48BBBE006DAF83 /* PureXML.framework */; };
@@ -54,13 +52,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F608C4191E4F2F2C00410948 /* CloudService.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudService.framework; path = ../Carthage/Build/iOS/CloudService.framework; sourceTree = "<group>"; };
 		F63F52921E48B849006DAF83 /* nube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = nube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63F52951E48B849006DAF83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F63F529C1E48B849006DAF83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F63F529F1E48B849006DAF83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F63F52A11E48B849006DAF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F63F52AA1E48BBBE006DAF83 /* CloudAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudAPI.framework; path = ../Carthage/Build/iOS/CloudAPI.framework; sourceTree = "<group>"; };
-		F63F52AB1E48BBBE006DAF83 /* CloudStore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudStore.framework; path = ../Carthage/Build/iOS/CloudStore.framework; sourceTree = "<group>"; };
 		F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudUI.framework; path = ../Carthage/Build/iOS/CloudUI.framework; sourceTree = "<group>"; };
 		F63F52AD1E48BBBE006DAF83 /* Fountain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fountain.framework; path = ../Carthage/Build/iOS/Fountain.framework; sourceTree = "<group>"; };
 		F63F52AE1E48BBBE006DAF83 /* PureXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureXML.framework; path = ../Carthage/Build/iOS/PureXML.framework; sourceTree = "<group>"; };
@@ -79,10 +76,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F63F52BB1E48C3A5006DAF83 /* KeyChain.framework in Frameworks */,
-				F63F52B01E48BBBE006DAF83 /* CloudAPI.framework in Frameworks */,
-				F63F52B11E48BBBE006DAF83 /* CloudStore.framework in Frameworks */,
+				F608C41A1E4F2F2C00410948 /* CloudService.framework in Frameworks */,
 				F63F52B21E48BBBE006DAF83 /* CloudUI.framework in Frameworks */,
+				F63F52BB1E48C3A5006DAF83 /* KeyChain.framework in Frameworks */,
 				F63F52B31E48BBBE006DAF83 /* Fountain.framework in Frameworks */,
 				F63F52B41E48BBBE006DAF83 /* PureXML.framework in Frameworks */,
 				F63F52B51E48BBBE006DAF83 /* SQLite.framework in Frameworks */,
@@ -93,9 +89,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F608C41B1E4F2F3B00410948 /* CloudService.framework in Frameworks */,
 				F63F52D11E48C8D3006DAF83 /* KeyChain.framework in Frameworks */,
-				F63F52D21E48C8D3006DAF83 /* CloudAPI.framework in Frameworks */,
-				F63F52D31E48C8D3006DAF83 /* CloudStore.framework in Frameworks */,
 				F63F52D41E48C8D3006DAF83 /* CloudUI.framework in Frameworks */,
 				F63F52D51E48C8D3006DAF83 /* Fountain.framework in Frameworks */,
 				F63F52D61E48C8D3006DAF83 /* PureXML.framework in Frameworks */,
@@ -157,9 +152,8 @@
 		F63F52A91E48BBBE006DAF83 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F608C4191E4F2F2C00410948 /* CloudService.framework */,
 				F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */,
-				F63F52AA1E48BBBE006DAF83 /* CloudAPI.framework */,
-				F63F52AB1E48BBBE006DAF83 /* CloudStore.framework */,
 				F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */,
 				F63F52AD1E48BBBE006DAF83 /* Fountain.framework */,
 				F63F52AE1E48BBBE006DAF83 /* PureXML.framework */,
@@ -301,8 +295,7 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/../Carthage/Build/iOS/CloudAPI.framework",
-				"$(SRCROOT)/../Carthage/Build/iOS/CloudStore.framework",
+				"$(SRCROOT)/../Carthage/Build/iOS/CloudService.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/CloudUI.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/Fountain.framework",
 				"$(SRCROOT)/../Carthage/Build/iOS/PureXML.framework",
@@ -534,6 +527,7 @@
 				F63F52A61E48B849006DAF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F63F52CD1E48C83E006DAF83 /* Build configuration list for PBXNativeTarget "documents" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +536,7 @@
 				F63F52CF1E48C83E006DAF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -8,7 +8,7 @@
 
 import UIKit
 import CloudUI
-import CloudStore
+import CloudService
 import KeyChain
 
 class DocumentPickerViewController: UIDocumentPickerExtensionViewController, AccountListRouter, ResourceListRouter, CloudServiceDelegate {
