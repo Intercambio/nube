@@ -65,12 +65,12 @@
 		F63F52AD1E48BBBE006DAF83 /* Fountain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fountain.framework; path = ../Carthage/Build/iOS/Fountain.framework; sourceTree = "<group>"; };
 		F63F52AE1E48BBBE006DAF83 /* PureXML.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PureXML.framework; path = ../Carthage/Build/iOS/PureXML.framework; sourceTree = "<group>"; };
 		F63F52AF1E48BBBE006DAF83 /* SQLite.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SQLite.framework; path = ../Carthage/Build/iOS/SQLite.framework; sourceTree = "<group>"; };
-		F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModule.swift; sourceTree = "<group>"; };
+		F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ApplicationModule.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F63F52B91E48BDAE006DAF83 /* nube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = nube.entitlements; sourceTree = "<group>"; };
 		F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyChain.framework; path = ../Carthage/Build/iOS/KeyChain.framework; sourceTree = "<group>"; };
 		F63F52C01E48C83E006DAF83 /* documents.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = documents.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		F63F52C31E48C83E006DAF83 /* documents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = documents.entitlements; sourceTree = "<group>"; };
-		F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerViewController.swift; sourceTree = "<group>"; };
+		F63F52C41E48C83E006DAF83 /* DocumentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = DocumentPickerViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		F63F52C91E48C83E006DAF83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -534,6 +534,7 @@
 				F63F52A61E48B849006DAF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F63F52CD1E48C83E006DAF83 /* Build configuration list for PBXNativeTarget "documents" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +543,7 @@
 				F63F52CF1E48C83E006DAF83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

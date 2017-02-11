@@ -17,7 +17,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     let accountListModule: AccountListModule
     let resourceListModule: ResourceListModule
-    let resourceModule: ResourceModule
+    let resourcePreviewModule: ResourcePreviewModule
     let resourceBrowserModule: ResourceBrowserModule
     let settingsModule: SettingsModule
     
@@ -29,16 +29,16 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         
         accountListModule = AccountListModule(cloudService: cloudService)
         resourceListModule = ResourceListModule(cloudService: cloudService)
-        resourceModule = ResourceModule()
+        resourcePreviewModule = ResourcePreviewModule(cloudService: cloudService)
         resourceBrowserModule = ResourceBrowserModule()
         settingsModule = SettingsModule(cloudService: cloudService)
         mainModule = MainModule(cloudService: cloudService)
         
         resourceBrowserModule.accountListModule = accountListModule
         resourceBrowserModule.resourceListModule = resourceListModule
-        resourceBrowserModule.resourceModule = resourceModule
+        resourceBrowserModule.resourcePreviewModule = resourcePreviewModule
         mainModule.resourceBrowserModule = resourceBrowserModule
-        mainModule.resourceModule = resourceModule
+        mainModule.resourcePreviewModule = resourcePreviewModule
         mainModule.settingsModule = settingsModule
         
         accountListModule.router = self

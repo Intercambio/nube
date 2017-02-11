@@ -17,7 +17,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     
     var accountListModule: AccountListModule!
     var resourceListModule: ResourceListModule!
-    var resourceModule: ResourceModule!
+    var resourcePreviewModule: ResourcePreviewModule!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
 
@@ -42,7 +42,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
                 } else {
                     this.accountListModule = AccountListModule(cloudService: this.cloudService)
                     this.resourceListModule = ResourceListModule(cloudService: this.cloudService)
-                    this.resourceModule = ResourceModule()
+                    this.resourcePreviewModule = ResourcePreviewModule(cloudService: this.cloudService)
                     
                     this.accountListModule.router = this
                     this.resourceListModule.router = this
@@ -144,7 +144,7 @@ extension DocumentPickerViewController: ResourceUserInterface {
         if resource.isCollection == true {
             viewController = resourceListModule.makeViewController()
         } else {
-            viewController = resourceModule.makeViewController()
+            viewController = resourcePreviewModule.makeViewController()
         }
         if let resourcePresenter = viewController as? ResourceUserInterface {
             resourcePresenter.present(resource, animated: false)
