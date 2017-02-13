@@ -12,7 +12,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "453C8A15C0AC46BD7022964F6BE78D4D85B4A0AF" : "nube\/Carthage\/Checkouts\/CloudUI\/",
     "D27CF701B1FD4A68F6F99B36CDDAAC30094EE410" : "nube\/",
-    "3C36C959339B0F1CDC02476165DF6221D77B1753" : "nube\/Carthage\/Checkouts\/CloudStore\/"
+    "3C36C959339B0F1CDC02476165DF6221D77B1753" : "nube\/Carthage\/Checkouts\/CloudService\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "nube",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
