@@ -53,10 +53,10 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     
     // MARK: AccountListRouter, ResourceListRouter
     
-    public func present(resourceAt path: [String], of account: CloudService.Account) {
+    public func present(resourceAt path: [String], of account: Account) {
         do {
             guard
-                let resource = try cloudService.resource(of: account, at: path)
+                let resource = try cloudService.resource(of: account, at: Path(components: path))
                 else { return }
             self.present(resource)
         } catch {
@@ -64,14 +64,14 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         }
     }
     
-    public func present(_ resource: CloudService.Resource) {
+    public func present(_ resource: Resource) {
         guard
             let resourceUserInterface = window.rootViewController as? ResourceUserInterface
             else { return }
         resourceUserInterface.present(resource, animated: true)
     }
     
-    public func presentSettings(for account: CloudService.Account) {
+    public func presentSettings(for account: Account) {
         guard
             let settingsUserInterface = window.rootViewController as? SettingsUserInterface
             else { return }

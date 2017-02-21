@@ -55,7 +55,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
     // MARK: ServiceDelegate
     
     func service(_ service: CloudService,
-                 needsPasswordFor account: CloudService.Account,
+                 needsPasswordFor account: Account,
                  completionHandler: @escaping (String?) -> Void) {
         guard
             let prompt = window?.rootViewController as? PasswordUserInterface

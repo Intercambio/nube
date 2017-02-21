@@ -79,10 +79,10 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     // MARK: AccountListRouter, ResourceListRouter
     
     
-    public func present(resourceAt path: [String], of account: CloudService.Account) {
+    public func present(resourceAt path: [String], of account: Account) {
         do {
             guard
-                let resource = try cloudService.resource(of: account, at: path)
+                let resource = try cloudService.resource(of: account, at: Path(components: path))
                 else { return }
             self.present(resource)
         } catch {
@@ -90,11 +90,11 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
         }
     }
     
-    public func presentSettings(for account: CloudService.Account) {
+    public func presentSettings(for account: Account) {
         
     }
     
-    func present(_ resource: CloudService.Resource) {
+    func present(_ resource: Resource) {
         present(resource, animated: true)
     }
     
@@ -103,7 +103,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     // MARK: ServiceDelegate
     
     func service(_ service: CloudService,
-                 needsPasswordFor account: CloudService.Account,
+                 needsPasswordFor account: Account,
                  completionHandler: @escaping (String?) -> Void) {
     }
     
@@ -119,7 +119,7 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
 
 extension DocumentPickerViewController: ResourceUserInterface {
     
-    public var resource: CloudService.Resource? {
+    public var resource: Resource? {
         guard
             let navigationController = self.navigationController,
             let resourcePresenter = navigationController.topViewController as? ResourceUserInterface
@@ -129,7 +129,7 @@ extension DocumentPickerViewController: ResourceUserInterface {
         return resourcePresenter.resource
     }
     
-    public func present(_ resource: CloudService.Resource, animated: Bool) {
+    public func present(_ resource: Resource, animated: Bool) {
         guard
             let navigationController = self.navigationController,
             let viewController = makeViewController(for: resource)
@@ -139,9 +139,9 @@ extension DocumentPickerViewController: ResourceUserInterface {
         navigationController.pushViewController(viewController, animated: animated)
     }
     
-    private func makeViewController(for resource: CloudService.Resource) -> UIViewController? {
+    private func makeViewController(for resource: Resource) -> UIViewController? {
         var viewController: UIViewController? = nil
-        if resource.isCollection == true {
+        if resource.properties.isCollection == true {
             viewController = resourceListModule.makeViewController()
         } else {
             viewController = resourceModule.makeViewController()
