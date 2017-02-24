@@ -81,8 +81,9 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Acc
     
     public func present(resourceAt path: [String], of account: Account) {
         do {
+            let resourceID = ResourceID(accountID: account.identifier, path: Path(components: path))
             guard
-                let resource = try cloudService.resource(of: account, at: Path(components: path))
+                let resource = try cloudService.resource(with: resourceID)
                 else { return }
             self.present(resource)
         } catch {
