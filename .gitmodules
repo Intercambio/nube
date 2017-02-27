@@ -1,18 +1,18 @@
 [submodule "Carthage/Checkouts/Fountain"]
 	path = Carthage/Checkouts/Fountain
-	url = https://github.com/anagromataf/Fountain.git
+	url = ssh://git@github.com/anagromataf/Fountain.git
 [submodule "Carthage/Checkouts/KeyChain"]
 	path = Carthage/Checkouts/KeyChain
-	url = https://github.com/Intercambio/KeyChain.git
+	url = ssh://git@github.com/Intercambio/KeyChain.git
 [submodule "Carthage/Checkouts/PureXML"]
 	path = Carthage/Checkouts/PureXML
-	url = https://github.com/Intercambio/PureXML.git
+	url = ssh://git@github.com/Intercambio/PureXML.git
 [submodule "Carthage/Checkouts/SQLite.swift"]
 	path = Carthage/Checkouts/SQLite.swift
-	url = https://github.com/stephencelis/SQLite.swift.git
+	url = ssh://git@github.com/stephencelis/SQLite.swift.git
 [submodule "Carthage/Checkouts/CloudUI"]
 	path = Carthage/Checkouts/CloudUI
-	url = https://github.com/Intercambio/CloudUI.git
+	url = ssh://git@github.com/Intercambio/CloudUI.git
 [submodule "Carthage/Checkouts/CloudService"]
 	path = Carthage/Checkouts/CloudService
-	url = https://github.com/Intercambio/CloudService.git
+	url = ssh://git@github.com/Intercambio/CloudService.git
