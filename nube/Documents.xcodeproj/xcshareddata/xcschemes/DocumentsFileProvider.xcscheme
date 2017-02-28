@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "0820"
-   version = "1.3">
+   wasCreatedForAppExtension = "YES"
+   version = "2.0">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
@@ -14,10 +15,24 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F66473801E65ABC800F22E1E"
+               BuildableName = "DocumentsFileProvider.appex"
+               BlueprintName = "DocumentsFileProvider"
+               ReferencedContainer = "container:Documents.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
                BlueprintIdentifier = "F63F52911E48B849006DAF83"
-               BuildableName = "nube.app"
-               BlueprintName = "nube"
-               ReferencedContainer = "container:nube.xcodeproj">
+               BuildableName = "Documents.app"
+               BlueprintName = "Documents"
+               ReferencedContainer = "container:Documents.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +47,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F63F52911E48B849006DAF83"
-            BuildableName = "nube.app"
-            BlueprintName = "nube"
-            ReferencedContainer = "container:nube.xcodeproj">
+            BlueprintIdentifier = "F66473801E65ABC800F22E1E"
+            BuildableName = "DocumentsFileProvider.appex"
+            BlueprintName = "DocumentsFileProvider"
+            ReferencedContainer = "container:Documents.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -43,31 +58,25 @@
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES">
+      allowLocationSimulation = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F63F52911E48B849006DAF83"
-            BuildableName = "nube.app"
-            BlueprintName = "nube"
-            ReferencedContainer = "container:nube.xcodeproj">
+            BuildableName = "Documents.app"
+            BlueprintName = "Documents"
+            ReferencedContainer = "container:Documents.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <EnvironmentVariables>
-         <EnvironmentVariable
-            key = "DYLD_PRINT_STATISTICS"
-            value = "1"
-            isEnabled = "YES">
-         </EnvironmentVariable>
-      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -76,15 +85,16 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES">
+      debugDocumentVersioning = "YES"
+      launchAutomaticallySubstyle = "2">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F63F52911E48B849006DAF83"
-            BuildableName = "nube.app"
-            BlueprintName = "nube"
-            ReferencedContainer = "container:nube.xcodeproj">
+            BuildableName = "Documents.app"
+            BlueprintName = "Documents"
+            ReferencedContainer = "container:Documents.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

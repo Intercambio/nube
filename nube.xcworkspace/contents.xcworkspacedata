@@ -14,7 +14,7 @@
       location = "group:README.md">
    </FileRef>
    <FileRef
-      location = "group:nube/nube.xcodeproj">
+      location = "group:/Users/tobias/Projekte/nube/nube/Documents.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Carthage/Checkouts/CloudUI/CloudUI/CloudUI.xcodeproj">

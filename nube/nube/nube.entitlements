@@ -4,11 +4,11 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.im.intercambio.nube</string>
+		<string>group.im.intercambio.documents</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)im.intercambio.nube</string>
+		<string>$(AppIdentifierPrefix)im.intercambio</string>
 	</array>
 </dict>
 </plist>
