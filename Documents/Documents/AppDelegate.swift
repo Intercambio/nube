@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  nube
+//  Documents
 //
 //  Created by Tobias Kraentzer on 06.02.17.
 //  Copyright © 2017 Tobias Kräntzer. All rights reserved.
@@ -20,13 +20,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         guard
-            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.nube")
+            let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.documents")
             else { return false }
         
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
         
-        let keyChain = KeyChain(serviceName: "im.intercambio.nube")
+        let keyChain = KeyChain(serviceName: "im.intercambio")
         
         cloudService = CloudService(directory: resourcesDirectory, keyChain: keyChain)
         cloudService?.delegate = self
