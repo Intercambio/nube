@@ -1,4 +1,4 @@
-github "Intercambio/CloudService" "0.10"
+github "Intercambio/CloudService" "0.10.1"
 github "Intercambio/CloudUI" "f397ca0fc37ae51ac28d13d5225ae5f7f9f78996"
 github "Intercambio/KeyChain" "1.2"
 github "Intercambio/PureXML" "1.2.1"
