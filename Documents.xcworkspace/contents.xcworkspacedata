@@ -16,10 +16,4 @@
    <FileRef
       location = "group:Documents/Documents.xcodeproj">
    </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/CloudUI/CloudUI/CloudUI.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Carthage/Checkouts/CloudService/CloudService/CloudService.xcodeproj">
-   </FileRef>
 </Workspace>
