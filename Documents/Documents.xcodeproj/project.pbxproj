@@ -17,7 +17,29 @@
 		F63F52B51E48BBBE006DAF83 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
 		F63F52B81E48BC8E006DAF83 /* ApplicationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */; };
 		F63F52BB1E48C3A5006DAF83 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F6EF8C8C1E69E04E00BBF4D8 /* DocumentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF8C8B1E69E04E00BBF4D8 /* DocumentPickerViewController.swift */; };
+		F6EF8C8F1E69E04E00BBF4D8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EF8C8D1E69E04E00BBF4D8 /* MainInterface.storyboard */; };
+		F6EF8C9A1E69E04F00BBF4D8 /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF8C991E69E04F00BBF4D8 /* FileProvider.swift */; };
+		F6EF8C9E1E69E04F00BBF4D8 /* PickerFileProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F6EF8C951E69E04E00BBF4D8 /* PickerFileProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		F6EF8CA11E69E04F00BBF4D8 /* Picker.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F6EF8C871E69E04E00BBF4D8 /* Picker.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F6EF8C9C1E69E04F00BBF4D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F63F528A1E48B849006DAF83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6EF8C941E69E04E00BBF4D8;
+			remoteInfo = PickerFileProvider;
+		};
+		F6EF8C9F1E69E04F00BBF4D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F63F528A1E48B849006DAF83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F6EF8C861E69E04E00BBF4D8;
+			remoteInfo = Picker;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F63F52D01E48C83E006DAF83 /* Embed App Extensions */ = {
@@ -26,6 +48,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				F6EF8CA11E69E04F00BBF4D8 /* Picker.appex in Embed App Extensions */,
+				F6EF8C9E1E69E04F00BBF4D8 /* PickerFileProvider.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -46,6 +70,15 @@
 		F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationModule.swift; sourceTree = "<group>"; };
 		F63F52B91E48BDAE006DAF83 /* Documents.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Documents.entitlements; sourceTree = "<group>"; };
 		F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KeyChain.framework; path = ../Carthage/Build/iOS/KeyChain.framework; sourceTree = "<group>"; };
+		F6EF8C871E69E04E00BBF4D8 /* Picker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Picker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6EF8C8A1E69E04E00BBF4D8 /* Picker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Picker.entitlements; sourceTree = "<group>"; };
+		F6EF8C8B1E69E04E00BBF4D8 /* DocumentPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPickerViewController.swift; sourceTree = "<group>"; };
+		F6EF8C8E1E69E04E00BBF4D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F6EF8C901E69E04E00BBF4D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6EF8C951E69E04E00BBF4D8 /* PickerFileProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PickerFileProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6EF8C981E69E04F00BBF4D8 /* PickerFileProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PickerFileProvider.entitlements; sourceTree = "<group>"; };
+		F6EF8C991E69E04F00BBF4D8 /* FileProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProvider.swift; sourceTree = "<group>"; };
+		F6EF8C9B1E69E04F00BBF4D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +95,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6EF8C841E69E04E00BBF4D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EF8C921E69E04E00BBF4D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -69,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				F63F52941E48B849006DAF83 /* Documents */,
+				F6EF8C881E69E04E00BBF4D8 /* Picker */,
+				F6EF8C961E69E04F00BBF4D8 /* PickerFileProvider */,
 				F63F52931E48B849006DAF83 /* Products */,
 				F63F52A91E48BBBE006DAF83 /* Frameworks */,
 			);
@@ -78,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				F63F52921E48B849006DAF83 /* Documents.app */,
+				F6EF8C871E69E04E00BBF4D8 /* Picker.appex */,
+				F6EF8C951E69E04E00BBF4D8 /* PickerFileProvider.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,6 +175,43 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F6EF8C881E69E04E00BBF4D8 /* Picker */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF8C8B1E69E04E00BBF4D8 /* DocumentPickerViewController.swift */,
+				F6EF8C8D1E69E04E00BBF4D8 /* MainInterface.storyboard */,
+				F6EF8C901E69E04E00BBF4D8 /* Info.plist */,
+				F6EF8C891E69E04E00BBF4D8 /* Supporting Files */,
+			);
+			path = Picker;
+			sourceTree = "<group>";
+		};
+		F6EF8C891E69E04E00BBF4D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF8C8A1E69E04E00BBF4D8 /* Picker.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F6EF8C961E69E04F00BBF4D8 /* PickerFileProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF8C991E69E04F00BBF4D8 /* FileProvider.swift */,
+				F6EF8C9B1E69E04F00BBF4D8 /* Info.plist */,
+				F6EF8C971E69E04F00BBF4D8 /* Supporting Files */,
+			);
+			path = PickerFileProvider;
+			sourceTree = "<group>";
+		};
+		F6EF8C971E69E04F00BBF4D8 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F6EF8C981E69E04F00BBF4D8 /* PickerFileProvider.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -140,11 +228,47 @@
 			buildRules = (
 			);
 			dependencies = (
+				F6EF8C9D1E69E04F00BBF4D8 /* PBXTargetDependency */,
+				F6EF8CA01E69E04F00BBF4D8 /* PBXTargetDependency */,
 			);
 			name = Documents;
 			productName = nube;
 			productReference = F63F52921E48B849006DAF83 /* Documents.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F6EF8C861E69E04E00BBF4D8 /* Picker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6EF8CA71E69E04F00BBF4D8 /* Build configuration list for PBXNativeTarget "Picker" */;
+			buildPhases = (
+				F6EF8C831E69E04E00BBF4D8 /* Sources */,
+				F6EF8C841E69E04E00BBF4D8 /* Frameworks */,
+				F6EF8C851E69E04E00BBF4D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Picker;
+			productName = Picker;
+			productReference = F6EF8C871E69E04E00BBF4D8 /* Picker.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F6EF8C941E69E04E00BBF4D8 /* PickerFileProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F6EF8CA61E69E04F00BBF4D8 /* Build configuration list for PBXNativeTarget "PickerFileProvider" */;
+			buildPhases = (
+				F6EF8C911E69E04E00BBF4D8 /* Sources */,
+				F6EF8C921E69E04E00BBF4D8 /* Frameworks */,
+				F6EF8C931E69E04E00BBF4D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PickerFileProvider;
+			productName = PickerFileProvider;
+			productReference = F6EF8C951E69E04E00BBF4D8 /* PickerFileProvider.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -169,6 +293,26 @@
 							};
 						};
 					};
+					F6EF8C861E69E04E00BBF4D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EJW69VRSSH;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
+					F6EF8C941E69E04E00BBF4D8 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EJW69VRSSH;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = F63F528D1E48B849006DAF83 /* Build configuration list for PBXProject "Documents" */;
@@ -185,6 +329,8 @@
 			projectRoot = "";
 			targets = (
 				F63F52911E48B849006DAF83 /* Documents */,
+				F6EF8C861E69E04E00BBF4D8 /* Picker */,
+				F6EF8C941E69E04E00BBF4D8 /* PickerFileProvider */,
 			);
 		};
 /* End PBXProject section */
@@ -196,6 +342,21 @@
 			files = (
 				F63F52A01E48B849006DAF83 /* LaunchScreen.storyboard in Resources */,
 				F63F529D1E48B849006DAF83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EF8C851E69E04E00BBF4D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EF8C8F1E69E04E00BBF4D8 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EF8C931E69E04E00BBF4D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +395,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F6EF8C831E69E04E00BBF4D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EF8C8C1E69E04E00BBF4D8 /* DocumentPickerViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F6EF8C911E69E04E00BBF4D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F6EF8C9A1E69E04F00BBF4D8 /* FileProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F6EF8C9D1E69E04F00BBF4D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6EF8C941E69E04E00BBF4D8 /* PickerFileProvider */;
+			targetProxy = F6EF8C9C1E69E04F00BBF4D8 /* PBXContainerItemProxy */;
+		};
+		F6EF8CA01E69E04F00BBF4D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F6EF8C861E69E04E00BBF4D8 /* Picker */;
+			targetProxy = F6EF8C9F1E69E04F00BBF4D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F63F529E1E48B849006DAF83 /* LaunchScreen.storyboard */ = {
@@ -243,6 +433,14 @@
 				F63F529F1E48B849006DAF83 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		F6EF8C8D1E69E04E00BBF4D8 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F6EF8C8E1E69E04E00BBF4D8 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -344,6 +542,7 @@
 		F63F52A51E48B849006DAF83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Documents/Documents.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
@@ -359,6 +558,7 @@
 		F63F52A61E48B849006DAF83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Documents/Documents.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
@@ -367,6 +567,66 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.documents;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F6EF8CA21E69E04F00BBF4D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Picker/Picker.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				INFOPLIST_FILE = Picker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.documents.picker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F6EF8CA31E69E04F00BBF4D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Picker/Picker.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				INFOPLIST_FILE = Picker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = im.intercambio.documents.picker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F6EF8CA41E69E04F00BBF4D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PickerFileProvider/PickerFileProvider.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				INFOPLIST_FILE = PickerFileProvider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "im.intercambio.documents.picker-fileprovider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F6EF8CA51E69E04F00BBF4D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PickerFileProvider/PickerFileProvider.entitlements;
+				DEVELOPMENT_TEAM = EJW69VRSSH;
+				INFOPLIST_FILE = PickerFileProvider/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "im.intercambio.documents.picker-fileprovider";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -388,6 +648,24 @@
 			buildConfigurations = (
 				F63F52A51E48B849006DAF83 /* Debug */,
 				F63F52A61E48B849006DAF83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6EF8CA61E69E04F00BBF4D8 /* Build configuration list for PBXNativeTarget "PickerFileProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6EF8CA41E69E04F00BBF4D8 /* Debug */,
+				F6EF8CA51E69E04F00BBF4D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F6EF8CA71E69E04F00BBF4D8 /* Build configuration list for PBXNativeTarget "Picker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F6EF8CA21E69E04F00BBF4D8 /* Debug */,
+				F6EF8CA31E69E04F00BBF4D8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
