@@ -22,11 +22,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         guard
             let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.documents")
             else { return false }
-        
+                
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
         
         let keyChain = KeyChain(serviceName: "im.intercambio")
+        
+        setupAccountListInteractorNotifications()
+        setupResourceListInteractorNotifications()
+        setupResourceDetailsInteractorNotifications()
         
         cloudService = CloudService(directory: resourcesDirectory, keyChain: keyChain)
         cloudService?.delegate = self
@@ -64,7 +68,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
                 return
         }
         
-        prompt.requestPassword(for: account, completion: completionHandler)
+        prompt.requestPassword(forAccountWith: account.identifier, completion: completionHandler)
     }
     
     func serviceDidBeginActivity(_ service: CloudService) {

@@ -27,11 +27,11 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         self.window = window
         self.cloudService = cloudService
         
-        accountListModule = AccountListModule(cloudService: cloudService)
-        resourceListModule = ResourceListModule(cloudService: cloudService)
-        resourceDetailsModule = ResourceDetailsModule(cloudService: cloudService)
+        accountListModule = AccountListModule(interactor: cloudService)
+        resourceListModule = ResourceListModule(interactor: cloudService)
+        resourceDetailsModule = ResourceDetailsModule(interactor: cloudService)
         resourceBrowserModule = ResourceBrowserModule()
-        settingsModule = SettingsModule(cloudService: cloudService)
+        settingsModule = SettingsModule(interactor: cloudService)
         mainModule = MainModule(cloudService: cloudService)
         
         resourceBrowserModule.accountListModule = accountListModule
@@ -76,7 +76,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         guard
             let settingsUserInterface = window.rootViewController as? SettingsUserInterface
             else { return }
-        settingsUserInterface.presentSettings(for: account, animated: true)
+        settingsUserInterface.presentSettings(forAccountWith: account.identifier, animated: true)
     }
     
     public func presentNewAccount() {
