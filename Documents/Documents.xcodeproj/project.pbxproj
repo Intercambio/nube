@@ -17,6 +17,16 @@
 		F63F52B51E48BBBE006DAF83 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
 		F63F52B81E48BC8E006DAF83 /* ApplicationModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F52B71E48BC8E006DAF83 /* ApplicationModule.swift */; };
 		F63F52BB1E48C3A5006DAF83 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F6E45EAC1E69E605007AA907 /* CloudService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608C4191E4F2F2C00410948 /* CloudService.framework */; };
+		F6E45EAD1E69E605007AA907 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F6E45EAE1E69E605007AA907 /* CloudUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AC1E48BBBE006DAF83 /* CloudUI.framework */; };
+		F6E45EAF1E69E605007AA907 /* Fountain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AD1E48BBBE006DAF83 /* Fountain.framework */; };
+		F6E45EB01E69E605007AA907 /* PureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AE1E48BBBE006DAF83 /* PureXML.framework */; };
+		F6E45EB11E69E605007AA907 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
+		F6E45EB21E69E627007AA907 /* CloudService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F608C4191E4F2F2C00410948 /* CloudService.framework */; };
+		F6E45EB31E69E627007AA907 /* KeyChain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52BA1E48C3A5006DAF83 /* KeyChain.framework */; };
+		F6E45EB41E69E627007AA907 /* PureXML.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AE1E48BBBE006DAF83 /* PureXML.framework */; };
+		F6E45EB51E69E627007AA907 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63F52AF1E48BBBE006DAF83 /* SQLite.framework */; };
 		F6EF8C8C1E69E04E00BBF4D8 /* DocumentPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF8C8B1E69E04E00BBF4D8 /* DocumentPickerViewController.swift */; };
 		F6EF8C8F1E69E04E00BBF4D8 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F6EF8C8D1E69E04E00BBF4D8 /* MainInterface.storyboard */; };
 		F6EF8C9A1E69E04F00BBF4D8 /* FileProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6EF8C991E69E04F00BBF4D8 /* FileProvider.swift */; };
@@ -99,6 +109,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E45EAC1E69E605007AA907 /* CloudService.framework in Frameworks */,
+				F6E45EAD1E69E605007AA907 /* KeyChain.framework in Frameworks */,
+				F6E45EAE1E69E605007AA907 /* CloudUI.framework in Frameworks */,
+				F6E45EAF1E69E605007AA907 /* Fountain.framework in Frameworks */,
+				F6E45EB01E69E605007AA907 /* PureXML.framework in Frameworks */,
+				F6E45EB11E69E605007AA907 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +122,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6E45EB21E69E627007AA907 /* CloudService.framework in Frameworks */,
+				F6E45EB31E69E627007AA907 /* KeyChain.framework in Frameworks */,
+				F6E45EB41E69E627007AA907 /* PureXML.framework in Frameworks */,
+				F6E45EB51E69E627007AA907 /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,6 +596,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Picker/Picker.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = Picker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -591,6 +612,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Picker/Picker.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = Picker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -606,6 +628,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PickerFileProvider/PickerFileProvider.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = PickerFileProvider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -621,6 +644,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PickerFileProvider/PickerFileProvider.entitlements;
 				DEVELOPMENT_TEAM = EJW69VRSSH;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../Carthage/Build/iOS/";
 				INFOPLIST_FILE = PickerFileProvider/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
