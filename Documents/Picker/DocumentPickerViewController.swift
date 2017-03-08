@@ -14,6 +14,11 @@ import KeyChain
 class DocumentPickerViewController: UIDocumentPickerExtensionViewController, CloudServiceDelegate, AccountListRouter, ResourceListRouter {
 
     let cloudService: CloudService = {
+        
+        setupAccountListInteractorNotifications()
+        setupResourceListInteractorNotifications()
+        setupResourceDetailsInteractorNotifications()
+        
         let keyChain = KeyChain(serviceName: "im.intercambio")
         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.documents")!
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
@@ -22,13 +27,13 @@ class DocumentPickerViewController: UIDocumentPickerExtensionViewController, Clo
     }()
     
     lazy var accountListModule: AccountListModule = {
-        let module = AccountListModule(cloudService: self.cloudService)
+        let module = AccountListModule(interactor: self.cloudService)
         module.router = self
         return module
     }()
     
     lazy var resourceListModule: ResourceListModule = {
-        let module = ResourceListModule(cloudService: self.cloudService)
+        let module = ResourceListModule(interactor: self.cloudService)
         module.router = self
         return module
     }()

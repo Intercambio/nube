@@ -1,5 +1,5 @@
 github "Intercambio/CloudService" "0.10.1"
-github "Intercambio/CloudUI" "f397ca0fc37ae51ac28d13d5225ae5f7f9f78996"
+github "Intercambio/CloudUI" "22adedd9672120fcff23fb2b2b2f70f20d73a01a"
 github "Intercambio/KeyChain" "1.2"
 github "Intercambio/PureXML" "1.2.1"
 github "anagromataf/Fountain" "2.6"
