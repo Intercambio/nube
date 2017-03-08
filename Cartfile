@@ -1,2 +1,3 @@
 github "Intercambio/CloudUI" "develop"
+github "Intercambio/CloudService" "develop"
 github "Intercambio/KeyChain" ~> 1.2

@@ -26,13 +26,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
         
-        let keyChain = KeyChain(serviceName: "im.intercambio")
+        let keyChain = KeyChain(serviceName: "im.intercambio.documents")
         
         setupAccountListInteractorNotifications()
         setupResourceListInteractorNotifications()
         setupResourceDetailsInteractorNotifications()
         
-        cloudService = CloudService(directory: resourcesDirectory, keyChain: keyChain)
+        let bundleIdentifier = Bundle(for: AppDelegate.self).bundleIdentifier!
+        
+        cloudService = CloudService(directory: resourcesDirectory,
+                                    keyChain: keyChain,
+                                    bundleIdentifier: bundleIdentifier,
+                                    sharedContainerIdentifier: "group.im.intercambio.documents")
         cloudService?.delegate = self
         cloudService?.start { error in
             DispatchQueue.main.async {
@@ -53,7 +58,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CloudServiceDelegate {
         self.window?.screen = screen
         
         return true
+    }
+    
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        guard
+            let cloudService = self.cloudService
+            else {
+                completionHandler()
+                return
+        }
         
+        cloudService.handleEvents(forBackgroundURLSession: identifier,
+                                  completionHandler: completionHandler)
     }
     
     // MARK: ServiceDelegate

@@ -13,18 +13,27 @@ import KeyChain
 
 class DocumentPickerViewController: UIDocumentPickerExtensionViewController, CloudServiceDelegate, AccountListRouter, ResourceListRouter {
 
-    let cloudService: CloudService = {
+    static let cloudService: CloudService = {
         
         setupAccountListInteractorNotifications()
         setupResourceListInteractorNotifications()
         setupResourceDetailsInteractorNotifications()
         
-        let keyChain = KeyChain(serviceName: "im.intercambio")
+        let keyChain = KeyChain(serviceName: "im.intercambio.documents")
         let directory = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.im.intercambio.documents")!
         let resourcesDirectory = directory.appendingPathComponent("resources", isDirectory: true)
+        let bundleIdentifier = Bundle(for: DocumentPickerViewController.self).bundleIdentifier!
+        
         try! FileManager.default.createDirectory(at: resourcesDirectory, withIntermediateDirectories: true, attributes: nil)
-        return CloudService(directory: resourcesDirectory, keyChain: keyChain)
+        return CloudService(directory: resourcesDirectory,
+                            keyChain: keyChain,
+                            bundleIdentifier: bundleIdentifier,
+                            sharedContainerIdentifier: "group.im.intercambio.documents")
     }()
+    
+    var cloudService: CloudService {
+        return DocumentPickerViewController.cloudService
+    }
     
     lazy var accountListModule: AccountListModule = {
         let module = AccountListModule(interactor: self.cloudService)
