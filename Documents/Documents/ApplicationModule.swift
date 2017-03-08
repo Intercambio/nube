@@ -58,7 +58,7 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
             let resourceID = ResourceID(accountID: account.identifier, path: Path(components: path))
             guard
                 let resource = try cloudService.resource(with: resourceID)
-                else { return }
+            else { return }
             self.present(resource)
         } catch {
             NSLog("Failed to get resource manager: \(error)")
@@ -68,14 +68,14 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
     public func present(_ resource: Resource) {
         guard
             let resourceUserInterface = window.rootViewController as? ResourceUserInterface
-            else { return }
+        else { return }
         resourceUserInterface.present(resource, animated: true)
     }
     
     public func presentSettings(for account: Account) {
         guard
             let settingsUserInterface = window.rootViewController as? SettingsUserInterface
-            else { return }
+        else { return }
         settingsUserInterface.presentSettings(forAccountWith: account.identifier, animated: true)
     }
     
@@ -84,17 +84,16 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         let title = "Add Account"
         let message = "Enter the url and username of your Nextcloud server"
         
-        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        alert.addTextField { (textField) in
+        alert.addTextField { textField in
             textField.placeholder = NSLocalizedString("https://could.example.com", comment: "")
             textField.keyboardType = .URL
             textField.autocapitalizationType = .none
             textField.autocorrectionType = .no
         }
         
-        alert.addTextField { (textField) in
+        alert.addTextField { textField in
             textField.placeholder = NSLocalizedString("Username", comment: "")
             textField.keyboardType = .emailAddress
             textField.autocapitalizationType = .none
@@ -102,20 +101,20 @@ public class ApplicationModule: AccountListRouter, ResourceListRouter {
         }
         
         let addAction = UIAlertAction(title: NSLocalizedString("Add", comment: ""), style: .default) {
-            action in
+            _ in
             guard
                 let urlString = alert.textFields?.first?.text,
                 let url = URL(string: urlString),
                 let username = alert.textFields?.last?.text
-                else {
-                    return
+            else {
+                return
             }
             
-            let _ = try! self.cloudService.addAccount(with: url, username: username)
+            _ = try! self.cloudService.addAccount(with: url, username: username)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) {
-            action in
+            _ in
         }
         
         alert.addAction(addAction)
